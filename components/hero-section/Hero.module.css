@@ -1,0 +1,728 @@
+.heroSection {
+  position: relative;
+  min-height: 100svh;
+  overflow: clip;
+  background:
+    radial-gradient(
+      32rem 24rem at 82% 12%,
+      rgba(118, 150, 255, 0.11) 0%,
+      rgba(118, 150, 255, 0.035) 34%,
+      transparent 66%
+    ),
+    radial-gradient(
+      26rem 18rem at 14% 68%,
+      rgba(95, 193, 255, 0.045) 0%,
+      rgba(95, 193, 255, 0.012) 34%,
+      transparent 64%
+    ),
+    linear-gradient(135deg, #08111d 0%, #0d1830 42%, #132340 72%, #182c4d 100%);
+  color: rgba(248, 250, 255, 0.98);
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 72% 44%,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.01) 16%,
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.015) 0%,
+      rgba(255, 255, 255, 0) 22%
+    );
+  opacity: 0.88;
+}
+
+.heroShell {
+  position: relative;
+  z-index: 1;
+  padding-top: 140px;
+  padding-bottom: 24px;
+}
+
+.heroMainWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.heroBody {
+  min-height: calc(100svh - 170px);
+}
+
+.heroCopy {
+  padding-top: clamp(18px, 4vw, 8px);
+  padding-bottom: 8px;
+}
+
+.heroContent {
+  max-width: 580px;
+  will-change: transform, opacity;
+}
+
+.sceneCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroRightContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* left content */
+
+.heroTopText {
+  margin: 0 0 10px;
+  color: rgba(226, 234, 248, 0.82);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  transition:
+    margin 0.35s ease,
+    font-size 0.35s ease;
+}
+
+.heroQuestionBlock {
+  position: relative;
+  display: inline-block;
+  padding-top: 12px;
+  transition:
+    padding-top 0.38s ease,
+    transform 0.38s ease;
+}
+
+.heroQuestion {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 3.1vw, 4.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.questionTextStart {
+  color: #ffffff;
+}
+
+.questionLink {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    color 0.24s ease,
+    opacity 0.24s ease,
+    transform 0.24s ease;
+}
+
+.questionLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.08em;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition:
+    background-color 0.24s ease,
+    transform 0.24s ease,
+    opacity 0.24s ease;
+}
+
+.questionLink:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.heroQuestionBlock:hover .questionLink::after,
+.heroQuestionBlock:focus-within .questionLink::after,
+.heroQuestionBlockHint .questionLink::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.questionMark {
+  color: #ffffff;
+}
+
+.heroArrow {
+  position: absolute;
+  left: 0;
+  top: -33px;
+  width: min(100%, 360px);
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.heroArrowPath,
+.heroArrowHead {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.heroArrowPath {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  transition:
+    stroke-dashoffset 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease;
+}
+
+.heroArrowHead {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  transition:
+    stroke-dashoffset 0.35s ease 0.45s,
+    opacity 0.2s ease 0.1s;
+}
+
+.heroQuestionBlock:hover .heroArrowPath,
+.heroQuestionBlock:hover .heroArrowHead,
+.heroQuestionBlock:focus-within .heroArrowPath,
+.heroQuestionBlock:focus-within .heroArrowHead,
+.heroQuestionBlockHint .heroArrowPath,
+.heroQuestionBlockHint .heroArrowHead {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}
+
+.heroQuestionBlock:hover,
+.heroQuestionBlockHint {
+  padding-top: 22px;
+}
+
+/* contact button */
+
+.heroActions {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.contactButton {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 172px;
+  min-height: 54px;
+  padding: 0 30px;
+  border-radius: 999px;
+  overflow: hidden;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #3478f6 0%, #2f6fe7 52%, #245ed4 100%);
+  box-shadow:
+    0 14px 30px rgba(47, 111, 231, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    background 0.24s ease;
+}
+
+.contactButton::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      circle at 30% 18%,
+      rgba(105, 222, 218, 0.22) 0%,
+      rgba(105, 222, 218, 0.08) 30%,
+      transparent 58%
+    ),
+    linear-gradient(135deg, #3478f6 0%, #2f6fe7 55%, #245ed4 100%);
+}
+
+.contactButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -85%;
+  width: 52%;
+  height: 100%;
+  z-index: -1;
+  transform: skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.65s ease;
+}
+
+.contactButton:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 36px rgba(47, 111, 231, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+.contactButton:hover::after {
+  left: 130%;
+}
+
+.contactButton:focus-visible {
+  outline: 3px solid rgba(105, 222, 218, 0.6);
+  outline-offset: 5px;
+}
+
+.contactButton:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* right slider */
+
+.heroSolutionsSliderWrapRight {
+  width: min(100%, 480px);
+  margin-inline: auto;
+}
+
+.heroSolutionsSwiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.solutionCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.solutionImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.solutionImage {
+  object-fit: contain;
+  transition:
+    transform 0.45s ease,
+    opacity 0.24s ease;
+}
+
+.solutionCard:hover .solutionImage {
+  transform: scale(1.018);
+}
+
+.solutionTextWrap {
+  min-height: 34px;
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.34s ease,
+    transform 0.34s ease;
+}
+
+.solutionTextWrapActive {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.solutionActiveTitle {
+  position: relative;
+  display: inline-flex;
+  color: rgba(244, 248, 255, 0.96);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  transition:
+    color 0.24s ease,
+    transform 0.24s ease;
+}
+
+.solutionActiveTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(105, 222, 218, 0.95),
+    rgba(255, 255, 255, 0.95)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.solutionTextWrapActive .solutionActiveTitle::after {
+  transform: scaleX(1);
+}
+
+.solutionActiveTitle:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.heroSolutionsPaginationRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.heroSolutionsPaginationRight :global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  border-radius: 999px;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.28);
+  transition:
+    width 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.heroSolutionsPaginationRight :global(.swiper-pagination-bullet-active) {
+  width: 24px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* partners */
+
+.heroPartnersSection {
+  padding-top: 0;
+}
+
+.heroPartnersSwiper {
+  width: 100%;
+}
+
+.heroPartnerItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+.heroPartnerLogo {
+  width: auto;
+  max-width: 100%;
+  height: 44px;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  transition:
+    opacity 0.24s ease,
+    filter 0.24s ease;
+}
+
+.heroPartnerItem:hover .heroPartnerLogo,
+.heroPartnerItem:focus-within .heroPartnerLogo {
+  opacity: 1;
+}
+
+/* RTL */
+
+[dir="rtl"] .heroContent {
+  margin-left: auto;
+}
+
+[dir="rtl"] .heroQuestionBlock {
+  direction: ltr;
+}
+
+[dir="rtl"] .heroTopText,
+[dir="rtl"] .heroQuestion {
+  text-align: right;
+}
+
+[dir="rtl"] .heroActions {
+  justify-content: flex-end;
+}
+
+/* responsive */
+
+@media (max-width: 1400px) {
+  .heroContent {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .heroQuestion {
+    font-size: clamp(2rem, 3.8vw, 3.5rem);
+  }
+
+  .heroArrow {
+    width: 320px;
+  }
+
+  .heroTopText {
+    font-size: 19px;
+  }
+
+  .heroSolutionsSliderWrapRight {
+    width: min(100%, 390px);
+  }
+
+  .contactButton {
+    min-width: 164px;
+    min-height: 52px;
+    padding-inline: 28px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .heroBody {
+    min-height: auto;
+  }
+
+  .heroCopy {
+    padding-top: 4px;
+    padding-bottom: 8px;
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
+  .heroQuestion {
+    max-width: 12ch;
+    font-size: clamp(2.1rem, 8vw, 3.7rem);
+  }
+
+  .heroArrow {
+    width: 310px;
+    top: -22px;
+  }
+
+  .heroTopText {
+    font-size: 18px;
+  }
+
+  .heroRightContent {
+    padding-top: 8px;
+  }
+
+  .heroSolutionsSliderWrapRight {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .heroPartnerLogo {
+    max-height: 38px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .heroShell {
+    padding-top: 120px;
+    padding-bottom: 24px;
+  }
+
+  .heroMainWrapper {
+    gap: 16px;
+  }
+
+  .heroTopText {
+    margin-bottom: 8px;
+    font-size: 17px;
+  }
+
+  .heroQuestionBlock {
+    padding-top: 10px;
+  }
+
+  .heroQuestionBlock:hover,
+  .heroQuestionBlockHint {
+    padding-top: 16px;
+  }
+
+  .heroArrow {
+    width: 285px;
+    top: -20px;
+  }
+
+  .heroActions {
+    margin-top: 22px;
+  }
+
+  .contactButton {
+    min-width: 156px;
+    min-height: 50px;
+    padding-inline: 26px;
+    font-size: 16px;
+  }
+
+  .heroRightContent {
+    padding-top: 18px;
+  }
+
+  .solutionTextWrap {
+    margin-top: 16px;
+  }
+
+  .solutionActiveTitle {
+    font-size: 15px;
+  }
+
+  .heroPartnerLogo {
+    max-height: 32px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .heroShell {
+    padding-inline: 16px;
+    padding-bottom: 22px;
+  }
+
+  .heroTopText {
+    font-size: 16px;
+  }
+
+  .heroQuestion {
+    max-width: 100%;
+    font-size: clamp(1.85rem, 9vw, 2.8rem);
+    line-height: 1.12;
+  }
+
+  .heroQuestionBlock {
+    padding-top: 8px;
+  }
+
+  .heroQuestionBlock:hover,
+  .heroQuestionBlockHint {
+    padding-top: 12px;
+  }
+
+  .heroArrow {
+    width: 220px;
+    top: -14px;
+  }
+
+  .heroActions {
+    margin-top: 20px;
+  }
+
+  .contactButton {
+    min-width: 148px;
+    min-height: 48px;
+    padding-inline: 24px;
+    font-size: 15.5px;
+  }
+
+  .heroRightContent {
+    padding-top: 14px;
+  }
+
+  .heroSolutionsSliderWrapRight {
+    width: 100%;
+  }
+
+  .solutionImageWrap {
+    border-radius: 18px;
+  }
+
+  .solutionTextWrap {
+    margin-top: 14px;
+    min-height: 30px;
+  }
+
+  .solutionActiveTitle {
+    font-size: 14px;
+  }
+
+  .solutionActiveTitle::after {
+    bottom: -5px;
+  }
+
+  .heroPartnerLogo {
+    max-height: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .heroArrow {
+    width: 190px;
+  }
+
+  .contactButton {
+    min-width: 140px;
+    min-height: 46px;
+    padding-inline: 22px;
+    font-size: 15px;
+  }
+
+  .heroSolutionsPaginationRight {
+    margin-top: 16px;
+  }
+
+  .heroPartnerLogo {
+    max-height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroTopText,
+  .heroQuestionBlock,
+  .questionLink,
+  .questionLink::after,
+  .heroArrowPath,
+  .heroArrowHead,
+  .contactButton,
+  .contactButton::after,
+  .solutionImage,
+  .solutionTextWrap,
+  .solutionActiveTitle,
+  .solutionActiveTitle::after,
+  .heroSolutionsPaginationRight :global(.swiper-pagination-bullet),
+  .heroPartnerLogo {
+    transition: none !important;
+  }
+
+  .heroQuestionBlockHint {
+    padding-top: 12px;
+  }
+}

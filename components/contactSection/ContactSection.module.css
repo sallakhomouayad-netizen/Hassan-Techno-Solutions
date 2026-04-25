@@ -1,0 +1,587 @@
+.contactSection {
+  padding: 10px 0 60px;
+  background-color: #f7f7f7;
+}
+
+.contactHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 90px;
+  margin-bottom: 80px;
+}
+
+.smallLabel {
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+.smallLabel span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #7ea8f8;
+  display: block;
+  flex-shrink: 0;
+}
+
+.smallLabel p {
+  margin: 0;
+  color: #1e1e1e;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.mainHeading {
+  flex: 1;
+}
+
+.mainHeading h2 {
+  margin: 0 0 14px;
+  color: #1c1c1c;
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 400;
+}
+
+.mainHeading p {
+  margin: 0;
+  color: #555;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 1px;
+ font-family: inherit;
+}
+
+/* equal height columns */
+.equalRow {
+  align-items: stretch;
+}
+
+.equalCol {
+  display: flex;
+}
+
+.officeCardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  width: 100%;
+}
+
+.officeCard {
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 22px;
+  padding: 15px 26px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  outline: none;
+  flex: 1;
+  display: flex;
+}
+
+.officeCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
+  border-color: #3b78ea;
+}
+
+.officeCardActive {
+  transform: translateY(-4px);
+  border-color: #3b78ea;
+  box-shadow:
+    0 14px 26px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(59, 120, 234, 0.14);
+}
+
+/* ===== MAIN FIX HERE ===== */
+.officeCardContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  min-height: 170px;
+}
+
+.officeTextSide {
+  min-width: 0;
+  width: 100%;
+}
+
+.officeTop {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.officeTop h3 {
+  margin: 0;
+  color: #1d1d1d;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.officeCallIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: #1d1d1d;
+  flex-shrink: 0;
+}
+
+.officeCallIcon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.officeInfo h4 {
+  margin: 0 0 10px;
+  color: #1d1d1d;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.officeInfo p,
+.officeInfo a {
+  display: block;
+  margin: 0 0 6px;
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.officeInfo a:hover {
+  color: #7ea8f8;
+}
+
+.officeMap {
+  width: 180px;
+  min-width: 180px;
+  min-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9bb8ef;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.officeCard:hover .officeMap,
+.officeCardActive .officeMap {
+  color: #3b78ea;
+  transform: scale(1.04);
+}
+
+.mapSvg {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+.mapSvg path {
+  fill: currentColor !important;
+  stroke: transparent !important;
+  transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+.formCard {
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  height: 100%;
+  width: 100%;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.formCard:hover,
+.formCard:focus-within {
+  border-color: #3b78ea;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(59, 120, 234, 0.12);
+}
+
+.contactForm {
+  height: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputGroup label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e1e1e;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.inputWrap input,
+.inputWrap select,
+.inputWrap textarea {
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  background-color: #fafafa;
+  border-radius: 14px;
+  padding: 14px 18px;
+  outline: none;
+  font-size: 15px;
+  color: #222;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  appearance: none;
+}
+
+.inputWrap textarea {
+  resize: none;
+  min-height: 150px;
+}
+
+.inputWrap input::placeholder,
+.inputWrap textarea::placeholder {
+  color: #b6b6b6;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.inputWrap input:focus::placeholder,
+.inputWrap textarea:focus::placeholder {
+  opacity: 0;
+}
+
+.formCard:hover .inputWrap input,
+.formCard:hover .inputWrap select,
+.formCard:hover .inputWrap textarea,
+.formCard:focus-within .inputWrap input,
+.formCard:focus-within .inputWrap select,
+.formCard:focus-within .inputWrap textarea {
+  border-color: #5b8ef0;
+}
+
+.inputWrap input:focus,
+.inputWrap select:focus,
+.inputWrap textarea:focus {
+  border-color: #3b78ea;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(126, 168, 248, 0.14);
+}
+
+.submitButton {
+  width: 100%;
+  border: none;
+  background-color: #8fb0ef;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 14px 20px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.formCard:hover .submitButton,
+.formCard:focus-within .submitButton {
+  background-color: #3b73dd;
+}
+
+.submitButton:hover {
+  background-color: #2f68d4;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(59, 115, 221, 0.2);
+}
+
+/* RTL */
+[dir="rtl"] .contactHeader {
+  direction: rtl;
+}
+
+[dir="rtl"] .mainHeading h2,
+[dir="rtl"] .mainHeading p {
+  text-align: right;
+}
+
+[dir="rtl"] .smallLabel {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .officeCard {
+  text-align: right;
+}
+
+[dir="rtl"] .officeCardContent {
+  grid-template-columns: 180px minmax(0, 1fr);
+}
+
+[dir="rtl"] .officeTop {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+[dir="rtl"] .officeInfo h4,
+[dir="rtl"] .officeInfo p,
+[dir="rtl"] .officeInfo a {
+  text-align: right;
+}
+
+[dir="rtl"] .inputGroup label {
+  text-align: right;
+}
+
+[dir="rtl"] .inputWrap input,
+[dir="rtl"] .inputWrap select,
+[dir="rtl"] .inputWrap textarea {
+  text-align: right;
+}
+
+[dir="rtl"] .inputWrap input::placeholder,
+[dir="rtl"] .inputWrap textarea::placeholder {
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 1199.98px) {
+  .mainHeading h2 {
+    font-size: 52px;
+  }
+
+  .mainHeading p {
+    font-size: 23px;
+  }
+
+  .smallLabel p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .contactSection {
+    padding: 60px 0;
+  }
+
+  .contactHeader {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .smallLabel {
+    min-width: auto;
+    padding-top: 0;
+  }
+
+  .mainHeading h2 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .mainHeading p {
+    font-size: 20px;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+
+  .equalCol {
+    display: block;
+  }
+
+  .officeCardsWrapper {
+    height: auto;
+  }
+
+  .officeCard {
+    flex: unset;
+  }
+
+  .officeCardContent {
+    grid-template-columns: minmax(0, 1fr) 140px;
+    gap: 18px;
+    min-height: 150px;
+  }
+
+  [dir="rtl"] .officeCardContent {
+    grid-template-columns: 140px minmax(0, 1fr);
+  }
+
+  .officeTop h3 {
+    font-size: 28px;
+  }
+
+  .officeInfo h4 {
+    font-size: 20px;
+  }
+
+  .officeInfo p,
+  .officeInfo a {
+    font-size: 16px;
+  }
+
+  .officeMap {
+    width: 140px;
+    min-width: 140px;
+    min-height: 140px;
+  }
+
+  .mapSvg {
+    max-width: 120px;
+  }
+
+  .formCard {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contactSection {
+    padding: 45px 0;
+  }
+
+  .mainHeading h2 {
+    font-size: 34px;
+  }
+
+  .mainHeading p {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .smallLabel p {
+    font-size: 18px;
+  }
+
+  .officeCard {
+    padding: 20px;
+  }
+
+  .officeCardContent {
+    grid-template-columns: minmax(0, 1fr) 110px;
+    gap: 16px;
+    min-height: 130px;
+  }
+
+  [dir="rtl"] .officeCardContent {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+
+  .officeTop h3 {
+    font-size: 24px;
+  }
+
+  .officeInfo h4 {
+    font-size: 18px;
+  }
+
+  .officeInfo p,
+  .officeInfo a {
+    font-size: 14px;
+  }
+
+  .officeMap {
+    width: 110px;
+    min-width: 110px;
+    min-height: 110px;
+  }
+
+  .mapSvg {
+    max-width: 90px;
+  }
+
+  .formCard {
+    padding: 20px;
+  }
+
+  .inputWrap textarea {
+    min-height: 135px;
+  }
+
+  .submitButton {
+    font-size: 16px;
+    padding: 13px 18px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mainHeading h2 {
+    font-size: 28px;
+  }
+
+  .mainHeading p {
+    font-size: 16px;
+  }
+
+  .officeCard {
+    padding: 18px;
+  }
+
+  .officeCardContent {
+    grid-template-columns: minmax(0, 1fr) 90px;
+    gap: 14px;
+    min-height: 110px;
+  }
+
+  [dir="rtl"] .officeCardContent {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+
+  .officeTop {
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .officeTop h3 {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .officeCallIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .officeMap {
+    width: 90px;
+    min-width: 90px;
+    min-height: 90px;
+  }
+
+  .mapSvg {
+    max-width: 78px;
+  }
+}

@@ -1,0 +1,345 @@
+.about {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.text {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 50px;
+  flex-wrap: nowrap;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.line {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2b6cdf;
+  display: block;
+}
+
+.heading p {
+  margin: 0;
+  color: #000;
+  white-space: nowrap;
+  font-family: inherit;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.description {
+  margin: 0;
+  color: #000;
+  font-family: inherit;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0;
+  max-width: 950px;
+}
+
+.sliderWrapper {
+  margin-top: 40px;
+  overflow: hidden;
+  direction: ltr;
+  position: relative;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: aboutMarquee 30s linear infinite;
+  will-change: transform;
+}
+
+.marqueeReverse {
+  animation-direction: reverse;
+}
+
+.brandList {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brandItem {
+  flex: 0 0 auto;
+}
+
+.brandCard {
+  width: 180px;
+  height: 120px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateZ(0);
+}
+
+.brandImage {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+  display: block;
+  transform: translateZ(0);
+}
+
+/* Large screens */
+@media (max-width: 1199.98px) {
+  .text {
+    gap: 40px;
+  }
+
+  .description {
+    font-size: 28px;
+    line-height: 42px;
+  }
+
+  .heading p {
+    font-size: 22px;
+  }
+
+  .brandCard {
+    width: 168px;
+    height: 110px;
+    padding: 0 18px;
+  }
+
+  .brandImage {
+    max-height: 62px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 991.98px) {
+  .about {
+    padding: 50px 0;
+  }
+
+  .text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 35px;
+  }
+
+  .heading {
+    padding-top: 0;
+  }
+
+  .heading p {
+    font-size: 20px;
+    letter-spacing: 0.12em;
+  }
+
+  .description {
+    font-size: 24px;
+    line-height: 38px;
+    max-width: 100%;
+  }
+
+  .sliderWrapper {
+    margin-top: 30px;
+  }
+
+  .marqueeTrack {
+    animation-duration: 26s;
+  }
+
+  .brandList {
+    gap: 18px;
+  }
+
+  .brandCard {
+    width: 156px;
+    height: 100px;
+    padding: 0 16px;
+  }
+
+  .brandImage {
+    max-height: 55px;
+  }
+}
+
+/* Small tablets / large mobiles */
+@media (max-width: 767.98px) {
+  .about {
+    padding: 40px 0;
+  }
+
+  .text {
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .heading {
+    gap: 10px;
+  }
+
+  .line {
+    width: 6px;
+    height: 6px;
+  }
+
+  .heading p {
+    font-size: 18px;
+    letter-spacing: 0.1em;
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .sliderWrapper {
+    margin-top: 24px;
+  }
+
+  .marqueeTrack {
+    animation-duration: 24s;
+  }
+
+  .brandList {
+    gap: 14px;
+  }
+
+  .brandCard {
+    width: 145px;
+    height: 90px;
+    padding: 0 14px;
+  }
+
+  .brandImage {
+    max-height: 48px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .about {
+    padding: 35px 0;
+  }
+
+  .text {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .heading {
+    gap: 8px;
+  }
+
+  .heading p {
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    white-space: normal;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .sliderWrapper {
+    margin-top: 20px;
+  }
+
+  .marqueeTrack {
+    animation-duration: 22s;
+  }
+
+  .brandList {
+    gap: 12px;
+  }
+
+  .brandCard {
+    width: 132px;
+    height: 85px;
+    padding: 0 12px;
+    border-radius: 12px;
+  }
+
+  .brandImage {
+    max-height: 42px;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 399.98px) {
+  .about {
+    padding: 30px 0;
+  }
+
+  .heading p {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .brandCard {
+    width: 120px;
+    height: 78px;
+    padding: 0 10px;
+  }
+
+  .brandImage {
+    max-height: 38px;
+  }
+}
+
+/* RTL text only */
+[dir="rtl"] .text {
+  direction: rtl;
+}
+
+[dir="rtl"] .heading {
+  direction: rtl;
+}
+
+[dir="rtl"] .heading p {
+  text-align: right;
+}
+
+[dir="rtl"] .description {
+  text-align: right;
+}
+
+@keyframes aboutMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none !important;
+    transform: none !important;
+  }
+}

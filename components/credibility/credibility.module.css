@@ -1,0 +1,484 @@
+.credibility {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.text {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.line {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2b6cdf;
+  display: block;
+}
+
+.heading p {
+  margin: 0;
+  color: #0a0a0a;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 0;
+  color: #000000f2;
+}
+
+.content {
+  width: 100%;
+}
+
+/* layout switch */
+.desktopContent {
+  display: block;
+}
+
+.mobileContent {
+  display: none;
+}
+
+.box {
+  height: 100%;
+  min-height: 348px;
+  padding: 42px 24px 34px;
+  background-color: #e5e5ea;
+  border-radius: 20px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    opacity 0.35s ease;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  background-color: #f0f0f4;
+}
+
+.box:hover::before {
+  opacity: 1;
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  transition: transform 0.35s ease;
+}
+
+.box:hover .iconWrap {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.box img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.box p {
+  margin: 0 0 12px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #000000f2;
+  transition: color 0.3s ease;
+}
+
+.box span {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+/* ===== DESKTOP HOVER COLORS ===== */
+.yellowCard:hover {
+  border: 3px solid rgba(240, 211, 0, 0.48);
+}
+
+.yellowCard::before {
+  background: linear-gradient(
+    135deg,
+    rgba(240, 211, 0, 0.15),
+    rgba(240, 211, 0, 0.02),
+    rgba(240, 211, 0, 0.09)
+  );
+}
+
+.yellowCard:hover p {
+  color: #c8ab00;
+}
+
+.greenCard:hover {
+  border: 3px solid rgba(44, 196, 55, 0.48);
+}
+
+.greenCard::before {
+  background: linear-gradient(
+    135deg,
+    rgba(44, 196, 55, 0.15),
+    rgba(44, 196, 55, 0.02),
+    rgba(44, 196, 55, 0.09)
+  );
+}
+
+.greenCard:hover p {
+  color: #22a92f;
+}
+
+.blueCard:hover {
+  border: 3px solid rgba(49, 108, 244, 0.48);
+}
+
+.blueCard::before {
+  background: linear-gradient(
+    135deg,
+    rgba(49, 108, 244, 0.15),
+    rgba(49, 108, 244, 0.02),
+    rgba(49, 108, 244, 0.09)
+  );
+}
+
+.blueCard:hover p {
+  color: #2f67e5;
+}
+
+.orangeCard:hover {
+  border: 3px solid rgba(255, 153, 0, 0.48);
+}
+
+.orangeCard::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 153, 0, 0.15),
+    rgba(255, 153, 0, 0.02),
+    rgba(255, 153, 0, 0.09)
+  );
+}
+
+.orangeCard:hover p {
+  color: #df8600;
+}
+
+.pinkCard:hover {
+  border: 3px solid rgba(240, 45, 255, 0.48);
+}
+
+.pinkCard::before {
+  background: linear-gradient(
+    135deg,
+    rgba(240, 45, 255, 0.15),
+    rgba(240, 45, 255, 0.02),
+    rgba(240, 45, 255, 0.09)
+  );
+}
+
+.pinkCard:hover p {
+  color: #d91ee6;
+}
+
+/* swiper */
+.swiperWrap {
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.credibilitySwiper {
+  overflow: visible !important;
+  padding-bottom: 70px !important;
+}
+
+.credibilitySwiper :global(.swiper) {
+  direction: inherit;
+}
+
+.credibilitySwiper :global(.swiper-wrapper) {
+  align-items: stretch;
+}
+
+.credibilitySwiper :global(.swiper-slide) {
+  height: auto;
+}
+
+.swiperBox {
+  margin-bottom: 0;
+}
+
+/* MOBILE / TABLET ACTIVE CARD SYSTEM */
+@media (max-width: 991.98px) {
+  .credibilitySwiper :global(.swiper-slide) .swiperBox {
+    transform: none !important;
+    box-shadow: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e5e5ea;
+  }
+
+  .credibilitySwiper :global(.swiper-slide) .swiperBox::before {
+    opacity: 0;
+  }
+
+  .credibilitySwiper :global(.swiper-slide) .swiperBox .iconWrap {
+    transform: none !important;
+  }
+
+  .credibilitySwiper :global(.swiper-slide) .swiperBox p {
+    color: #000000f2;
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .swiperBox {
+    transform: none !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    background-color: #f0f0f4;
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .swiperBox::before {
+    opacity: 1;
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .yellowCard {
+    border-color: rgba(240, 211, 0, 0.48);
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .greenCard {
+    border-color: rgba(44, 196, 55, 0.48);
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .blueCard {
+    border-color: rgba(49, 108, 244, 0.48);
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .orangeCard {
+    border-color: rgba(255, 153, 0, 0.48);
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .pinkCard {
+    border-color: rgba(240, 45, 255, 0.48);
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .yellowCard p {
+    color: #c8ab00;
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .greenCard p {
+    color: #22a92f;
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .blueCard p {
+    color: #2f67e5;
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .orangeCard p {
+    color: #df8600;
+  }
+
+  .credibilitySwiper :global(.swiper-slide-active) .pinkCard p {
+    color: #d91ee6;
+  }
+}
+
+/* pagination */
+.credibilitySwiper :global(.swiper-pagination) {
+  position: static !important;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credibilitySwiper
+  :global(.swiper-pagination-bullets.swiper-pagination-horizontal) {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #e7e7e7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.credibilitySwiper :global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  border-radius: 999px;
+  background: #9b9b9b;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.credibilitySwiper :global(.swiper-pagination-bullet-active) {
+  width: 22px;
+  background: #5c5c5c;
+}
+
+/* RTL */
+[dir="rtl"] .text {
+  direction: rtl;
+}
+
+[dir="rtl"] .heading {
+  direction: rtl;
+}
+
+[dir="rtl"] .heading p {
+  text-align: right;
+}
+
+[dir="rtl"] .description {
+  text-align: right;
+}
+
+[dir="rtl"] .box {
+  text-align: right;
+}
+
+[dir="rtl"] .box span {
+  text-align: right;
+}
+
+/* tablet */
+@media (max-width: 991.98px) {
+  .text {
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+
+  .description {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .desktopContent {
+    display: none;
+  }
+
+  .mobileContent {
+    display: block;
+  }
+
+  .box {
+    min-height: 280px;
+    padding: 28px 20px 24px;
+    border-radius: 18px;
+  }
+
+  .box p {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .box span {
+    line-height: 1.7;
+  }
+}
+
+/* mobile */
+@media (max-width: 767.98px) {
+  .credibility {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .text {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .heading p {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .box {
+    min-height: 250px;
+    padding: 22px 16px 20px;
+    border-radius: 16px;
+  }
+
+  .iconWrap {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+  }
+
+  .box img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .box p {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .box span {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .credibilitySwiper {
+    padding-bottom: 60px !important;
+  }
+
+  .box {
+    min-height: 235px;
+    padding: 20px 14px 18px;
+  }
+}
