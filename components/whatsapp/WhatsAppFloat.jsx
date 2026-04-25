@@ -6,7 +6,7 @@ import { HiXMark } from "react-icons/hi2";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./WhatsAppFloat.module.css";
 
-const INITIAL_DELAY = 9000;
+const INITIAL_DELAY = 14000;
 const AUTO_HIDE_DELAY = 5000;
 const REAPPEAR_DELAY = 25000;
 
