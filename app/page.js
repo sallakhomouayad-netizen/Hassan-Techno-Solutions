@@ -29,33 +29,42 @@ export default function Home() {
           <Hero />
         </section>
 
-        <section aria-label="About us section">
-          <AboutUs />
+
+
+        <section aria-label="Credibility section">
+          <Credibility />
         </section>
 
-        <section aria-label="Projects section">
+        
+        {/* <section aria-label="About us section">
+          <AboutUs />
+        </section> */}
+
+        {/* <section aria-label="Projects section">
           <ProjectComp />
+        </section> */}
+
+
+                <section aria-label="Key statistics section">
+          <StatsKey />
         </section>
+
 
         <section aria-label="Solutions section">
           <Solutions />
         </section>
 
-        <section aria-label="Key statistics section">
-          <StatsKey />
-        </section>
 
+{/* 
         <section aria-label="Partners section">
           <OurPartners />
-        </section>
+        </section> */}
 
-        <section aria-label="Industries section">
+        {/* <section aria-label="Industries section">
           <Industries />
-        </section>
+        </section> */}
 
-        <section aria-label="Credibility section">
-          <Credibility />
-        </section>
+
 
         <section aria-label="Frequently asked questions section">
           <Questions />
